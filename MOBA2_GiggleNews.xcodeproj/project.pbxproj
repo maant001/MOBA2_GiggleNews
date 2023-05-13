@@ -14,6 +14,7 @@
 		EA888E8B2A0FED41000E0615 /* MOBA2_GiggleNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA888E8A2A0FED41000E0615 /* MOBA2_GiggleNewsTests.swift */; };
 		EA888E952A0FED41000E0615 /* MOBA2_GiggleNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA888E942A0FED41000E0615 /* MOBA2_GiggleNewsUITests.swift */; };
 		EA888E972A0FED41000E0615 /* MOBA2_GiggleNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA888E962A0FED41000E0615 /* MOBA2_GiggleNewsUITestsLaunchTests.swift */; };
+		EA888EA42A0FED8B000E0615 /* jsonhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA888EA32A0FED8B000E0615 /* jsonhelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		EA888E902A0FED41000E0615 /* MOBA2_GiggleNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOBA2_GiggleNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA888E942A0FED41000E0615 /* MOBA2_GiggleNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBA2_GiggleNewsUITests.swift; sourceTree = "<group>"; };
 		EA888E962A0FED41000E0615 /* MOBA2_GiggleNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBA2_GiggleNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA888EA32A0FED8B000E0615 /* jsonhelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonhelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				EA888E792A0FED40000E0615 /* MOBA2_GiggleNewsApp.swift */,
 				EA888E7B2A0FED40000E0615 /* ContentView.swift */,
+				EA888EA32A0FED8B000E0615 /* jsonhelpers.swift */,
 				EA888E7D2A0FED41000E0615 /* Assets.xcassets */,
 				EA888E7F2A0FED41000E0615 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA888EA42A0FED8B000E0615 /* jsonhelpers.swift in Sources */,
 				EA888E7C2A0FED40000E0615 /* ContentView.swift in Sources */,
 				EA888E7A2A0FED40000E0615 /* MOBA2_GiggleNewsApp.swift in Sources */,
 			);

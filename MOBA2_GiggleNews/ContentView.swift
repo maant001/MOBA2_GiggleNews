@@ -7,15 +7,23 @@
 
 import SwiftUI
 
+
+// views
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        //TODO
+    }
+}
+
+
+
+struct JokePunchlineView : View {
+    var id : Int
+    @State var joke : Joke
+    
+    var body : some View {
+        
     }
 }
 
@@ -23,4 +31,17 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+// structs
+
+struct Joke: Identifiable, Decodable {
+    var setup : String?
+    var punchline : String?
+    var id: Int?
+}
+
+struct JokeWrapper: Decodable {
+    // TODO not sure if correct/needed
+    var results : [Joke]
 }
