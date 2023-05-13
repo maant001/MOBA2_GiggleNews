@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "128632FA-B53E-4B50-8D45-D500A4D61321"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4542B9F6-A573-4D19-AC4A-6A5EEB177600"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MOBA2_GiggleNews/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D14727D6-83BF-40B4-A0A9-19269AF37270"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MOBA2_GiggleNews/jsonhelpers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "loadJokes()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19DF1022-4A6C-4338-A71B-9EEFA4B73A15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MOBA2_GiggleNews/jsonhelpers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "loadJokes()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28E154D0-BD0C-4875-BF57-DE1E61682736"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MOBA2_GiggleNews/jsonhelpers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "loadJokes()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "28E154D0-BD0C-4875-BF57-DE1E61682736 - 9457bc56b1bfaf37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MOBA2_GiggleNews.Jsonhelpers.loadJokes() -&gt; Swift.Array&lt;MOBA2_GiggleNews.Joke&gt;"
+                  moduleName = "MOBA2_GiggleNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tony/ZHAW/MOBA2/MOBA2_GiggleNews/MOBA2_GiggleNews/MOBA2_GiggleNews/jsonhelpers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2064">
+               </Location>
+               <Location
+                  uuid = "28E154D0-BD0C-4875-BF57-DE1E61682736 - 9457bc56b1bfaf37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MOBA2_GiggleNews.Jsonhelpers.loadJokes() -&gt; Swift.Array&lt;MOBA2_GiggleNews.Joke&gt;"
+                  moduleName = "MOBA2_GiggleNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tony/ZHAW/MOBA2/MOBA2_GiggleNews/MOBA2_GiggleNews/MOBA2_GiggleNews/jsonhelpers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2178">
+               </Location>
+               <Location
+                  uuid = "28E154D0-BD0C-4875-BF57-DE1E61682736 - 8ed10736718bf155"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MOBA2_GiggleNews.Joke) -&gt; Swift.Bool in static MOBA2_GiggleNews.Jsonhelpers.loadJokes() -&gt; Swift.Array&lt;MOBA2_GiggleNews.Joke&gt;"
+                  moduleName = "MOBA2_GiggleNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tony/ZHAW/MOBA2/MOBA2_GiggleNews/MOBA2_GiggleNews/MOBA2_GiggleNews/jsonhelpers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

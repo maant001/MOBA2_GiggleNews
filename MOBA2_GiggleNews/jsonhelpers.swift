@@ -10,17 +10,33 @@ import Foundation
 class Jsonhelpers {
     // helpers
 
-    class func loadJokeSetups() -> [Joke] {
+    class func loadJokes() -> [Joke] {
         do {
             let urlString = "https://official-joke-api.appspot.com/random_ten"
+            
+            print(urlString)
+            
             let urlEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            
+            print(urlEncoded)
+            
             let urlFinal = URL(string: urlEncoded)!
+            
+            print(urlFinal)
+            
             let data = try Data(contentsOf: urlFinal)
+            
+            print(data)
+            
             let decoder = JSONDecoder()
+            
+            // mistake happens here?
             let decodedData = try decoder.decode(JokeWrapper.self, from: data)
             
+            print(decodedData)
+            
             return decodedData.results.filter({
-                return $0.setup != nil
+                return $0.type != nil
             })
         } catch {
             fatalError("json not loaded\n\(error)")
@@ -63,6 +79,7 @@ class Jsonhelpers {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(JokeWrapper.self, from: data)
             
+            // TODO probably
             return decodedData.results.filter({
                 return $0.punchline != nil
             })[0]

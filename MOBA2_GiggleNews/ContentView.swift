@@ -11,8 +11,34 @@ import SwiftUI
 // views
 
 struct ContentView: View {
+    @State var jokeSetupList = [Joke] ()
+    
     var body: some View {
         //TODO
+        VStack{
+            
+            // TODO BEAUTIFY
+            Text(String("Welcome to GIGGLE NEWS :) LMAO!")).bold()
+
+            
+            //TODO implement later
+            NavigationView {
+                List(jokeSetupList) {
+                    joke in
+
+                    // TODO ! ?
+                    NavigationLink(destination: JokePunchlineView(id: joke.id!, joke: Jsonhelpers.loadOneJoke(jokeId: joke.id!))) {
+                        Text(joke.setup!).frame(maxWidth: .infinity, alignment: .center).bold()
+                    }
+                }.onAppear() {
+                    DispatchQueue.main.async {
+                        // TODO crashes after next line
+                        //self.jokeSetupList = Jsonhelpers.loadJokes()
+                    }
+                }
+
+            }
+        }
     }
 }
 
@@ -24,6 +50,12 @@ struct JokePunchlineView : View {
     
     var body : some View {
         
+        VStack(alignment: .center) {
+            
+            Text(joke.setup!).bold()
+            Spacer()
+            Text(joke.punchline!)
+        }
     }
 }
 
@@ -36,12 +68,17 @@ struct ContentView_Previews: PreviewProvider {
 // structs
 
 struct Joke: Identifiable, Decodable {
+    var jokeId: Int?
     var setup : String?
     var punchline : String?
-    var id: Int?
+    var type : String?
+    var id: Int? {
+        get {
+            return jokeId ?? 0
+        }
+    }
 }
 
 struct JokeWrapper: Decodable {
-    // TODO not sure if correct/needed
     var results : [Joke]
 }
