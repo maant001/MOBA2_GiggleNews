@@ -15,3 +15,5 @@ struct MOBA2_GiggleNewsApp: App {
         }
     }
 }
+
+

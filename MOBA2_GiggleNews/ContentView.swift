@@ -7,78 +7,84 @@
 
 import SwiftUI
 
-
-// views
-
 struct ContentView: View {
-    @State var jokeSetupList = [Joke] ()
-    
-    var body: some View {
-        //TODO
-        VStack{
-            
-            // TODO BEAUTIFY
-            Text(String("Welcome to GIGGLE NEWS :) LMAO!")).bold()
+    @State private var jokes: [Joke] = []
+       @State private var selectedJoke: Joke?
+       
+       var body: some View {
+           
+           VStack {
+               
+               Text(String("Welcome to GIGGLE NEWS :) LMAO!")).bold()
 
-            
-            //TODO implement later
-            NavigationView {
-                List(jokeSetupList) {
-                    joke in
+               NavigationView {
+                   
+                   List(jokes) { joke in
+                       
+                       NavigationLink(destination: DetailView(joke: joke), tag: joke, selection: $selectedJoke) {
+                           
+                           Text(joke.setup)
+                       }
+                   }
+                   .onAppear(perform: loadJokes)
+                   //.navigationTitle("Giggle News")
+               }
+           }
+           
 
-                    // TODO ! ?
-                    NavigationLink(destination: JokePunchlineView(id: joke.id!, joke: Jsonhelpers.loadOneJoke(jokeId: joke.id!))) {
-                        Text(joke.setup!).frame(maxWidth: .infinity, alignment: .center).bold()
-                    }
-                }.onAppear() {
-                    DispatchQueue.main.async {
-                        // TODO crashes after next line
-                        //self.jokeSetupList = Jsonhelpers.loadJokes()
-                    }
-                }
+       }
+       
+       private func loadJokes() {
+           let url = URL(string: "https://official-joke-api.appspot.com/random_ten")!
+           
+           let task = URLSession.shared.dataTask(with: url) { data, response, error in
+               guard let data = data else {
+                   print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                   return
+               }
+               
+               do {
+                   self.jokes = try JSONDecoder().decode([Joke].self, from: data)
+               } catch {
+                   print("fatal error: \(error.localizedDescription)")
+               }
+           }
+           
+           task.resume()
+       }
+   }
 
-            }
-        }
-    }
-}
+   struct DetailView: View {
+       let joke: Joke
+       
+       var body: some View {
+           
+           VStack(alignment: .center) {
+               
+               Text(joke.setup)
+                   .font(.headline)
+                   .padding()
+               
+               
+               Text(joke.punchline)
+                   //.font(.subheadline)
+                   .foregroundColor(.red)
+               
+           }
+           .padding()
+           //.navigationTitle("Joke")
+       }
+   }
 
+   struct Joke: Codable, Identifiable, Hashable {
+       let id: Int
+       let type: String
+       let setup: String
+       let punchline: String
+   }
 
-
-struct JokePunchlineView : View {
-    var id : Int
-    @State var joke : Joke
-    
-    var body : some View {
-        
-        VStack(alignment: .center) {
-            
-            Text(joke.setup!).bold()
-            Spacer()
-            Text(joke.punchline!)
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
+struct Previews_MOBA2_GiggleNewsApp_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       ContentView()
     }
-}
-
-// structs
-
-struct Joke: Identifiable, Decodable {
-    var jokeId: Int?
-    var setup : String?
-    var punchline : String?
-    var type : String?
-    var id: Int? {
-        get {
-            return jokeId ?? 0
-        }
-    }
-}
-
-struct JokeWrapper: Decodable {
-    var results : [Joke]
 }

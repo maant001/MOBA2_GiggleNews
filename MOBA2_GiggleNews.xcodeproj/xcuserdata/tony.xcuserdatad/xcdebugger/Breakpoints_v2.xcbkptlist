@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4542B9F6-A573-4D19-AC4A-6A5EEB177600"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MOBA2_GiggleNews/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D14727D6-83BF-40B4-A0A9-19269AF37270"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -32,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "loadJokes()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "loadJokes()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "loadJokes()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "28E154D0-BD0C-4875-BF57-DE1E61682736 - 9457bc56b1bfaf37"
