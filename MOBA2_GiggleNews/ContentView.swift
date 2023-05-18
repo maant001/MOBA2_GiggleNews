@@ -13,56 +13,71 @@ import SwiftUI
 struct ContentView: View {
     @State private var jokes: [Joke] = []
     @State private var selectedJoke: Joke?
-       
+    @State private var selection = "general"
+    let data = ["general","knock-knock","programming"]
+    let data2 = ["anime","food","dad"]
+    
     var body: some View {
-           
         VStack {
-               
-            Text(String("Welcome to GIGGLE NEWS :) LMAO!")).bold()
-
+            Text("Welcome to GIGGLE NEWS :) LMAO!").bold()
+            
+            // Display buttons for each type of joke
+            HStack {
+                ForEach(data, id: \.self) { type in
+                    Button(type) {
+                        selection = type
+                        loadJokes(withParam: type)
+                    }
+                    .padding()
+                }
+            }
+            
+            HStack {
+                ForEach(data2, id: \.self) { type in
+                    Button(type) {
+                        selection = type
+                        loadJokes(withParam: type)
+                    }
+                    .padding()
+                }
+            }
+            
+            Spacer()
+            
             NavigationView {
-                   
                 List(jokes) { joke in
-                       
                     NavigationLink(destination: DetailView(joke: joke), tag: joke, selection: $selectedJoke) {
-                           
                         Text(joke.setup)
                     }
                 }
-                .onAppear(perform: loadJokes)
-                //.navigationTitle("Giggle News")
+                .onAppear(perform: {
+                    loadJokes(withParam: selection)
+                })
             }
         }
-           
-
     }
-       
-    private func loadJokes() {
-        // commented out so programmer jokes appear
-        //let url = URL(string:"https://official-joke-api.appspot.com/random_ten")!
-        let url = URL(string: "https://official-joke-api.appspot.com/jokes/programming/ten")!
-           
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-               
-            guard let data = data else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-               
+    
+    func loadJokes(withParam param: String) {
+        let urlString = "https://joke.deno.dev/type/\(param)"
+        
+        print(urlString)
+        
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
             do {
-                
-                self.jokes = try JSONDecoder().decode([Joke].self, from: data)
-                
+                let jokes = try JSONDecoder().decode([Joke].self, from: data)
+                DispatchQueue.main.async {
+                    self.jokes = jokes
+                }
             } catch {
-                
-                print("fatal error: \(error.localizedDescription)")
-                
+                print(error.localizedDescription)
             }
         }
-           
         task.resume()
     }
 }
+
 
 struct DetailView: View {
     let joke: Joke
@@ -104,5 +119,10 @@ struct Joke: Codable, Identifiable, Hashable {
     let setup: String
     let punchline: String
 }
+
+
+
+
+
 
 
